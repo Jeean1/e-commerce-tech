@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPurchasesThunk } from '../store/slices/purchases.slice';
+import Card from 'react-bootstrap/Card';
+
 
 const Purchases = () => {
 
@@ -11,20 +13,32 @@ const Purchases = () => {
         dispatch(getPurchasesThunk())
     }, [])
 
-    console.log(purchases)
-
     return (
         <div>
-            <h1>Purchases</h1>
-            <ul>
+            <h1 className='mg-10'>My Purchases</h1>
+            <div>
                 {
                     purchases.map(purchase => (
-                        <li key={purchase.id}>
-                            {purchase.cart?.products?.title}
-                        </li>
+                        
+                        <Card key={purchase.id} className="mg-10 card">
+                            <Card.Header>{Date(purchase.createdAt).slice(3, 16)}</Card.Header>
+                            {
+                                purchase.cart.products.map(product => (
+                                    <div key={product.id} className="mg-10">
+                                        <div>
+                                            <ul className='d-flex'>
+                                                <li>{product.title}</li>
+                                                <li>{product.productsInCart.quantity}</li>
+                                                <li>$ {product.price}</li>
+                                            </ul> 
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </Card>
                     ))
                 }
-            </ul>
+            </div>
         </div>
     );
 };

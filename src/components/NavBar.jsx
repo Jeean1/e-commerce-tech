@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/#/">E-commerce</Navbar.Brand>
+        <Navbar.Brand href="/#/" style={{color: '#f85555'}}>E-commerce</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
