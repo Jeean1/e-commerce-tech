@@ -12,19 +12,102 @@ code {
     monospace;
 }
 
-.mg-10{
+.mg-10 {
   margin: 10px;
 }
 
-.card-title{
+.card-title {
   height: 50px !important;
 }
 
-img{
+img {
   height: 200px;
   object-fit: contain;
   margin-top: 5px;
 }
 
+.d-flex {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  list-style: none;
+}
 
+.d-flex li {
+  width: 300px;
+}
 
+.d-flex li:nth-child(2) {
+  border: 1px solid #888686;
+  width: 50px;
+  max-height: 28px;
+}
+
+.carousel-control-prev-icon {
+  background-color: #f85555 !important;
+  border-radius: 50%;
+}
+
+.carousel-control-next-icon {
+  background-color: #f85555 !important;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+  background-color: #2e2e2e;
+}
+
+.quantity {
+  justify-content: center;
+  height: 30px;
+}
+
+.quantity p {
+  border: 1px solid #888686;
+  height: 30px;
+  width: 2rem;
+}
+
+.quantity button {
+  border: 1px solid #888686;
+  width: 25px;
+}
+
+.d-flex h3 {
+  color: #888686;
+}
+
+.cart-btn {
+  width: 80%;
+  margin: 20px 10%;
+  height: 3rem;
+}
+
+.description {
+  margin: 10px;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (max-width: 576px) {
+  .card {
+    font-size: small;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .card {
+    margin: 50px auto;
+    max-width: 50%;
+  }
+}
+
+/*X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {}
+
+/*XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {}
