@@ -39,11 +39,6 @@ const Purchases = () => {
                         </Card>
                     ))
                 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 4b3e3faa35f918dad79b204bc8a36873b3ee1a6f
             </div >
         </div >
     );
