@@ -36,20 +36,22 @@ const Home = () => {
   return (
     <div className="mg-10">
       <Row>
-        <Col lg={3}>
-          <h2>Categories</h2>
-          <ListGroup>
+        <Col lg={3} className="fixed-top">
+          {/* <h2>Categories</h2> */}
+          <ListGroup className="categories-style">
+            <h2>Categories</h2>
+
             {categories.map((category) => (
-              <ListGroup.Item 
-                key={category.id} 
+              <ListGroup.Item
+                key={category.id}
                 onClick={() => dispatch(filterCategoryThunk(category.id))}
-            >
+              >
                 {category.name}
-            </ListGroup.Item>
+              </ListGroup.Item>
             ))}
           </ListGroup>
         </Col>
-        <Col>
+        <Col className="mt-8">
           <h1>Home</h1>
           <div>
             <InputGroup className="mb-3">
@@ -66,7 +68,7 @@ const Home = () => {
                 Search
               </Button>
             </InputGroup>
-            <Row xs={1} s={2} md={3} className="g-4">
+            <Row xs={1} s={2} md={3} className="g-4 container-products ">
               {products.map((product) => (
                 <Col key={product.id}>
                   <Card>

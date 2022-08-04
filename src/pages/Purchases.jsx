@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
+import { Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPurchasesThunk } from '../store/slices/purchases.slice';
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 
 
 const Purchases = () => {
@@ -19,7 +20,7 @@ const Purchases = () => {
             <div>
                 {
                     purchases.map(purchase => (
-                        
+
                         <Card key={purchase.id} className="mg-10 card">
                             <Card.Header>{Date(purchase.createdAt).slice(3, 16)}</Card.Header>
                             {
@@ -30,7 +31,7 @@ const Purchases = () => {
                                                 <li>{product.title}</li>
                                                 <li>{product.productsInCart.quantity}</li>
                                                 <li>$ {product.price}</li>
-                                            </ul> 
+                                            </ul>
                                         </div>
                                     </div>
                                 ))
@@ -38,8 +39,8 @@ const Purchases = () => {
                         </Card>
                     ))
                 }
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 

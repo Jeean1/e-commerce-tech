@@ -1,9 +1,9 @@
 import './index.css'
 import { HashRouter, Routes, Route } from 'react-router-dom'
-import {Home, Login, ProductsDetail, Purchases} from './pages'
-import {NavBar} from './components'
-import {LoadingScreen} from './components'
+import { Home, Login, ProductsDetail, Purchases } from './pages'
+import { NavBar, LoadingScreen } from './components'
 import { useSelector } from 'react-redux'
+
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <HashRouter>
-      <NavBar />
+      <NavBar fixed='top' />
       {isLoading && <LoadingScreen />}
       <Routes>
         <Route path='/' element={<Home />} />
