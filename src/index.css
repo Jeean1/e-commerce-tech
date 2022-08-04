@@ -88,6 +88,59 @@ img {
   margin: 10px;
 }
 
+
+.categories-style {
+	position: fixed;
+	top: 61px;
+	width: 15%;
+	background: white;
+}
+
+
+.input-group {
+	position: relative !important;
+	display: flex !important;
+	flex-wrap: wrap !important;
+	align-items: stretch !important;
+	width: 55% !important;
+	margin: 1% auto !important;
+}
+
+.container-products {
+	width: 80% !important;
+	margin-left: 15% !important;
+}
+
+
+
+
+.offcanvas-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+
+
+
+
+
+.offcanvas.offcanvas-start {
+  top: 0;
+  right: 0 !important;
+  width: var(--bs-offcanvas-width);
+  border-right: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
+  transform: translateX(100%);
+
+}
+
+
+
+
+
 /*Small devices (landscape phones, 576px and up)*/
 @media (max-width: 576px) {
   .card {
