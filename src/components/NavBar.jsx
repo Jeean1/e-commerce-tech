@@ -5,7 +5,7 @@ import { DropDownMenu } from ".";
 
 const NavBar = () => {
   return (
-    <Navbar bg="light" expand="lg" className="fixed-top">
+    <Navbar bg="light" expand="lg" className="sticky-top">
       <Container>
         <Navbar.Brand href="/#/" style={{ color: '#f85555' }}>E-commerce</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -14,7 +14,6 @@ const NavBar = () => {
             <Nav.Link href="/#/">Home</Nav.Link>
             <Nav.Link href="/#/login">Login</Nav.Link>
             <Nav.Link href="/#/purchases">Purchases</Nav.Link>
-
           </Nav>
           <DropDownMenu />
         </Navbar.Collapse>

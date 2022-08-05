@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import { Home, Login, ProductsDetail, Purchases } from './pages'
 import { NavBar, LoadingScreen } from './components'
 import { useSelector } from 'react-redux'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/purchases' element={<Purchases />} />
       </Routes>
+      <Footer />
     </HashRouter>
   )
 }
