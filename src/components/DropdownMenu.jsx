@@ -1,27 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useDispatch } from 'react-redux';
+import { getUserCart } from '../store/slices/products.slice';
 import '../styles/dropDownMenu.css'
 
 const DropdownMenu = () => {
 
 
     const options = [
-        // {
-        //     name: 'Enable backdrop (default)',
-        //     scroll: false,
-        //     backdrop: true,
-        // },
-        // {
-        //     name: 'Disable backdrop',
-        //     scroll: false,
-        //     backdrop: false,
-        // },
-        // {
-        //     name: 'Enable body scrolling',
-        //     scroll: true,
-        //     backdrop: false,
-        // },
+
         {
             name: 'Enable both scrolling & backdrop',
             scroll: true,
@@ -44,11 +32,12 @@ const DropdownMenu = () => {
                 </Button>
                 <Offcanvas show={show} onHide={handleClose} {...props}>
                     <Offcanvas.Header closeButton>
-                        <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                        <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        Some text as placeholder. In real life you can have the elements you
-                        have chosen. Like, text, images, lists, etc.
+
+                        Aquí se mostrarán los productos qué agregue el user al carrito
+
                     </Offcanvas.Body>
                 </Offcanvas>
             </>
@@ -68,6 +57,16 @@ const DropdownMenu = () => {
 
     // render(<Example />);
 
+
+    const dispatch = useDispatch()
+
+
+    // useEffect(() => {
+
+    //     dispatch(getUserCart())
+
+
+    // }, [])
 
 
 
