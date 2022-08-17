@@ -6,15 +6,16 @@ import {
   filterCategoryThunk,
 } from "../store/slices/products.slice";
 import { useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import ListGroup from "react-bootstrap/ListGroup";
-import Offcanvas from 'react-bootstrap/Offcanvas';
+// import Button from "react-bootstrap/Button";
+// import Card from "react-bootstrap/Card";
+// import Col from "react-bootstrap/Col";
+// import Row from "react-bootstrap/Row";
+// import Form from "react-bootstrap/Form";
+// import InputGroup from "react-bootstrap/InputGroup";
+// import ListGroup from "react-bootstrap/ListGroup";
+// import Offcanvas from 'react-bootstrap/Offcanvas';
 import axios from "axios";
+import {Button, Card, Col, Row, Form, InputGroup, ListGroup, Offcanvas,  } from 'react-bootstrap'
 
 const Home = () => {
   const dispatch = useDispatch();
