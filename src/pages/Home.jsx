@@ -43,30 +43,46 @@ const Home = () => {
   return (
     <div className="mg-10">
       <Row>
-        <Col lg={1} >
-          <Button variant="primary" onClick={handleShow}>
-            <i className="fa-solid fa-filter"></i>
-          </Button>
-          <Offcanvas show={show} onHide={handleClose}>
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title>Filters</Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <ListGroup className="categories-style">
-                <h2>Categories</h2>
+        <div className="categoryContainer">
 
-                {categories.map((category) => (
-                  <ListGroup.Item
-                    key={category.id}
-                    onClick={() => dispatch(filterCategoryThunk(category.id))}
-                  >
-                    {category.name}
-                  </ListGroup.Item>
-                ))}
-              </ListGroup>
-            </Offcanvas.Body>
-          </Offcanvas>
-        </Col>
+          <Col lg={1} className='desktop' >
+            <Button variant="primary" onClick={handleShow} >
+              <i className="fa-solid fa-filter"></i>
+            </Button>
+            <Offcanvas show={show} onHide={handleClose}>
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title>Filters</Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <ListGroup className="categories-style">
+                  <h2>Categories</h2>
+
+                  {categories.map((category) => (
+                    <ListGroup.Item
+                      key={category.id}
+                      onClick={() => dispatch(filterCategoryThunk(category.id))}
+                    >
+                      {category.name}
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+              </Offcanvas.Body>
+            </Offcanvas>
+          </Col>
+        </div>
+
+        {/* 
+
+                    https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth
+
+                    https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth
+
+                    https://bobbyhadz.com/blog/react-get-window-width-height#:~:text=To%20get%20the%20width%20and,window%20in%20a%20state%20variable
+
+
+
+         */}
+
         <Col className="mt-8">
           <h1>Home</h1>
           <div>
@@ -88,8 +104,8 @@ const Home = () => {
               {products.map((product) => (
                 <Col key={product.id}>
                   <Card onClick={() => navigate(`/products/${product.id}`)} className="pointer">
-                      <Card.Img variant="top" src={product.productImgs?.[1]} className="over" />
-                      <Card.Img variant="top" src={product.productImgs} />
+                    <Card.Img variant="top" src={product.productImgs?.[1]} className="over" />
+                    <Card.Img variant="top" src={product.productImgs} />
                     <Card.Body>
                       <Card.Title className="card-title">
                         {product.title}

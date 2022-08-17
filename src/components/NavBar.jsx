@@ -1,9 +1,38 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { DropDownMenu } from ".";
 
 
+
 const NavBar = () => {
+
+  const navigate = useNavigate()
+  const token = localStorage.getItem('token')
+
+
+
+  const login = () => {
+
+    const token = localStorage.getItem('token')
+
+
+
+
+    if (token) {
+      localStorage.setItem('token', '')
+      alert('Closing session')
+      navigate('/login')
+    } else {
+      navigate('/login')
+      alert('Login to continue')
+    }
+
+
+  }
+
+
+
   return (
     <Navbar bg="light" expand="lg" className="sticky-top">
       <Container>
@@ -15,6 +44,19 @@ const NavBar = () => {
             <Nav.Link href="/#/login">Login</Nav.Link>
             <Nav.Link href="/#/purchases">Purchases</Nav.Link>
           </Nav>
+
+          {
+            token ? (
+              <Button as={Button} onClick={login} className='me-5 LogginSmallDevices'>
+                Log out
+              </Button>
+            ) : (
+              <Button as={Button} onClick={login} className='me-5 LogginSmallDevices'>
+                Log in
+              </Button>
+            )
+          }
+
           <DropDownMenu />
         </Navbar.Collapse>
       </Container>

@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import { addProductThunk } from "../store/slices/cart.slice";
 
 const ProductsDetail = () => {
   const allProducts = useSelector((state) => state.products);
@@ -42,6 +43,26 @@ const ProductsDetail = () => {
       setCounter(counter - 1);
     }
   };
+
+
+
+  const addProduct = () => {
+
+    alert('Adding to cart')
+
+    const product = {
+      id: productsDetail.id,
+      quantity: counter
+    }
+
+
+    dispatch(addProductThunk(product))
+
+    navigate('/')
+
+    console.log(product)
+
+  }
 
   return (
     <div className="mg-2rem">
@@ -93,7 +114,7 @@ const ProductsDetail = () => {
                 </div>
               </div>
             </div>
-            <Button variant="primary" className="cart-btn">
+            <Button variant="primary" className="cart-btn" onClick={addProduct}>
               Add to Cart <i className="fa-solid fa-cart-shopping"></i>
             </Button>
           </Col>
@@ -106,7 +127,7 @@ const ProductsDetail = () => {
             onClick={() => navigate(`/products/${products.id}`)}
             key={products.id}
           >
-            <Card onClick={() => navigate(`/products/${products.id}`)} className="pointer my-3">
+            <Card onClick={() => navigate(`/products/${product.id}`)} className="pointer my-3">
               <Card.Img variant="top" src={products.productImgs?.[1]} className="over" />
               <Card.Img variant="top" src={products.productImgs} />
               <Card.Body>

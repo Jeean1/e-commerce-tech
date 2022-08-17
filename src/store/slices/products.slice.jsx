@@ -36,12 +36,12 @@ export const filterCategoryThunk = (categoryId) => (dispatch) => {
 }
 
 
-export const getUserCart = () => (dispatch) => {
-    dispatch(setIsLoading(true));
-    return axios.get('https://ecommerce-api-react.herokuapp.com/api/v1/cart')
-        .then((res) => dispatch(console.log(res.data)))
-        .finally(() => dispatch(setIsLoading(false)));
-}
+// export const getUserCart = () => (dispatch) => {
+//     dispatch(setIsLoading(true));
+//     return axios.get('https://ecommerce-api-react.herokuapp.com/api/v1/cart', getConfig())
+//         .then((res) => dispatch(console.log(res.data)))
+//         .finally(() => dispatch(setIsLoading(false)));
+// }
 
 export const { setProducts } = productsSlice.actions;
 
