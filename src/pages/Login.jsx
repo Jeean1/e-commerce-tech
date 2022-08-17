@@ -2,8 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Form, Button } from 'react-bootstrap'
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
-import getConfig from '../utils/getConfig';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -97,6 +96,12 @@ const Login = () => {
                                     <Form.Control type="password" placeholder="Password" {...register('password')} />
                                 </Form.Group>
 
+                                <div className='createUserStyle'>
+
+                                    <Link to="/create" className='createUserStyle'>Create a user</Link>
+
+                                </div>
+
                                 <Button variant="primary" type="submit">
                                     Submit
                                 </Button>
@@ -113,30 +118,7 @@ const Login = () => {
                 }
 
 
-                {/* <Form className='container' onSubmit={handleSubmit(submit)}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" {...register('email')} />
-                        <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                        </Form.Text>
-                    </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" {...register('password')} />
-                    </Form.Group>
-
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Form> */}
-
-                {/* <div className='testUser'>
-                    <h3>test data</h3>
-                    <p>User: mason@gmail.com</p>
-                    <p>Password: mason1234</p>
-                </div> */}
 
             </div>
         </div>

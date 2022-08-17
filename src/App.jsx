@@ -1,6 +1,6 @@
 import './index.css'
 import { HashRouter, Routes, Route } from 'react-router-dom'
-import { Home, Login, ProductsDetail, Purchases } from './pages'
+import { CreateUser, Home, Login, ProductsDetail, Purchases } from './pages'
 import { NavBar, LoadingScreen, ProtectedRoutes } from './components'
 import { useSelector } from 'react-redux'
 import Footer from './components/Footer'
@@ -18,6 +18,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/products/:id' element={<ProductsDetail />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/create' element={<CreateUser />} />
         <Route element={<ProtectedRoutes />}>
 
           <Route path='/purchases' element={<Purchases />} />

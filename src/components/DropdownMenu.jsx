@@ -130,7 +130,7 @@ const DropdownMenu = () => {
     }, [])
 
 
-    console.log(cart)
+    // console.log(cart)
 
 
 

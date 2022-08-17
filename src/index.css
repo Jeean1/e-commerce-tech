@@ -203,11 +203,20 @@ footer i:hover {
 
 .testUser {
   width: 33%;
-  margin: 1% auto;
+  margin: -1% auto;
   background: gray;
   color: white;
   text-align: center;
   padding: 1%;
+}
+
+.createUserContainer {
+  height: 519px;
+}
+
+.testPrueba {
+	width: 60%;
+	margin: 5% auto;
 }
 
 
@@ -225,6 +234,17 @@ footer i:hover {
   .testUser {
     width: 100%;
     margin: 5% auto;
+  }
+
+  .createUserStyle {
+    width: 100%;
+    text-align: center;
+    margin: 10% auto;
+  }
+
+  .logginContainer {
+    height: 515px;
+    width: 100%;
   }
 
 }
