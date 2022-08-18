@@ -48,19 +48,39 @@ const ProductsDetail = () => {
 
   const addProduct = () => {
 
-    alert('Adding to cart')
+    // swal('Adding to cart', '', 'info')
 
-    const product = {
-      id: productsDetail.id,
-      quantity: counter
+    // const product = {
+    //   id: productsDetail.id,
+    //   quantity: counter
+    // }
+
+
+    // dispatch(addProductThunk(product))
+
+    // navigate('/')
+
+    // console.log(product)
+
+    if (counter !== 0) {
+
+      swal('Adding to cart', '', 'success')
+
+      const product = {
+        id: productsDetail.id,
+        quantity: counter
+      }
+
+
+      dispatch(addProductThunk(product))
+
+      navigate('/')
+
+      console.log(product)
+
+    } else {
+      swal('Please enter product quantity', '', 'info')
     }
-
-
-    dispatch(addProductThunk(product))
-
-    navigate('/')
-
-    console.log(product)
 
   }
 

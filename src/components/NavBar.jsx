@@ -21,11 +21,11 @@ const NavBar = () => {
 
     if (token) {
       localStorage.setItem('token', '')
-      alert('Closing session')
+      swal('Closing session', '', 'info')
       navigate('/login')
     } else {
       navigate('/login')
-      alert('Login to continue')
+      swal('Login to continue', 'To see your purchases logg in', 'info')
     }
 
 

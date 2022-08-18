@@ -1,75 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getProductsThunk,
-  filterTitleThunk,
-  filterCategoryThunk,
-} from "../store/slices/products.slice";
+import { filterTitleThunk } from "../store/slices/products.slice";
 import { useNavigate } from "react-router-dom";
-// import Button from "react-bootstrap/Button";
-// import Card from "react-bootstrap/Card";
-// import Col from "react-bootstrap/Col";
-// import Row from "react-bootstrap/Row";
-// import Form from "react-bootstrap/Form";
-// import InputGroup from "react-bootstrap/InputGroup";
-// import ListGroup from "react-bootstrap/ListGroup";
-// import Offcanvas from 'react-bootstrap/Offcanvas';
-import axios from "axios";
-import {Button, Card, Col, Row, Form, InputGroup, ListGroup, Offcanvas,  } from 'react-bootstrap'
+
+import { Button, Card, Col, Row, Form, InputGroup } from 'react-bootstrap'
+import { CategoriesBttn } from "../components";
 
 const Home = () => {
+
+
+
+
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [searchValue, setSearchValue] = useState("");
-  const [categories, setCategories] = useState([]);
 
   const products = useSelector((state) => state.products);
 
-  useEffect(() => {
-    dispatch(getProductsThunk());
-    axios
-      .get(
-        "https://ecommerce-api-react.herokuapp.com/api/v1/products/categories"
-      )
-      .then((res) => setCategories(res.data.data.categories));
-  }, []);
 
-  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
 
   return (
-    <div className="mg-10">
+    <div className="mg-10 container">
       <Row>
-        <div className="categoryContainer">
+        <Col lg={2}>
 
-          <Col lg={1} className='desktop' >
-            <Button variant="primary" onClick={handleShow} >
-              <i className="fa-solid fa-filter"></i>
-            </Button>
-            <Offcanvas show={show} onHide={handleClose}>
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title>Filters</Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <ListGroup className="categories-style">
-                  <h2>Categories</h2>
 
-                  {categories.map((category) => (
-                    <ListGroup.Item
-                      key={category.id}
-                      onClick={() => dispatch(filterCategoryThunk(category.id))}
-                    >
-                      {category.name}
-                    </ListGroup.Item>
-                  ))}
-                </ListGroup>
-              </Offcanvas.Body>
-            </Offcanvas>
-          </Col>
-        </div>
+
+
+          <CategoriesBttn />
+        </Col>
+
 
         {/* 
 
@@ -122,8 +86,8 @@ const Home = () => {
             </Row>
           </div>
         </Col>
-      </Row>
-    </div>
+      </Row >
+    </div >
   );
 };
 

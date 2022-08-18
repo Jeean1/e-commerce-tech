@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 // import { getUserCart } from '../store/slices/products.slice';
 import '../styles/dropDownMenu.css'
 import { clearCartThunk, getUserCart, setCart } from '../store/slices/cart.slice';
+import swal from 'sweetalert';
 
 const DropdownMenu = () => {
 
@@ -15,6 +16,8 @@ const DropdownMenu = () => {
     const navigate = useNavigate()
 
     const cart = useSelector(state => state.cart)
+
+
 
 
     const options = [
@@ -40,13 +43,17 @@ const DropdownMenu = () => {
 
             } else {
 
-                alert('You need log in')
+                swal('You need logg in', 'To see the shopping cart you need logg in', 'warning')
                 navigate('/login')
+
+
+
 
 
             }
 
         }
+
 
         return (
             <>
@@ -176,12 +183,12 @@ const DropdownMenu = () => {
 
         if (cart.length !== 0) {
 
-            alert('Successful purchase')
+            swal('Successful purchase', '¡Congratulations!', 'success')
 
             dispatch(clearCartThunk())
             navigate('/purchases')
         } else {
-            alert('cart is currently empty')
+            swal('cart is currently empty', 'You need add products', 'error')
         }
 
     }

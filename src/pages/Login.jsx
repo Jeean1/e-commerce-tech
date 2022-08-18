@@ -31,7 +31,7 @@ const Login = () => {
             })
             .catch(error => {
                 if (error.response.status === 404) {
-                    alert('wrong credentials')
+                    swal('wrong credentials', '', 'error')
                 }
             })
 

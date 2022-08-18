@@ -14,6 +14,9 @@ function App() {
     <HashRouter>
       <NavBar fixed='top' />
       {isLoading && <LoadingScreen />}
+
+
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products/:id' element={<ProductsDetail />} />

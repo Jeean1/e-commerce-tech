@@ -27,7 +27,7 @@ const CreateUser = () => {
 
             .then(() => {
 
-                alert('user created')
+                swal('user created', 'Congratulations', 'success')
                 navigate('/login')
             }
 
@@ -35,7 +35,7 @@ const CreateUser = () => {
 
             .catch(error => {
 
-                alert(`error type: ${error.response.data.message}`)
+                swal(`error type: ${error.response.data.message}`, 'Please, complete the form', 'error')
                 console.log(error.response)
             })
 
