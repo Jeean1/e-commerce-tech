@@ -223,20 +223,45 @@ footer i:hover {
   margin: 0% 0% 0% 60%;
 }
 
-.categories-style:hover{
+.categories-style:hover {
   cursor: pointer;
-  
+
 }
 
 .list-group-item:hover {
-	position: relative;
-	display: block;
-	padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
-	color: var(--bs-list-group-color);
-	text-decoration: none;
-	/* background-color: var(--bs-list-group-bg); */
+  position: relative;
+  display: block;
+  padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+  color: var(--bs-list-group-color);
+  text-decoration: none;
+  /* background-color: var(--bs-list-group-bg); */
   background-color: rgba(128, 128, 128, 0.485);
-	border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+  border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+}
+
+
+.loginContainer {
+  width: 50%;
+  margin: 1% auto;
+  text-align: center;
+  border: 1px solid black;
+  padding: 1rem;
+  height: 20rem;
+  border-radius: 10%;
+  background: lightgray;
+}
+
+.loginFontIcon {
+  margin: 0 auto;
+  width: 70%;
+  background: aquamarine;
+  border-radius: 60%;
+  padding: 2rem;
+}
+
+.loggin h1 {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 
@@ -266,6 +291,23 @@ footer i:hover {
     width: 100%;
   }
 
+  /* .loggin h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  } */
+
+  .logginContainer {
+    height: 515px;
+    width: 42%;
+  }
+
+  .loginContainer {
+
+    width: 400%;
+  }
+
+
+
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -273,6 +315,15 @@ footer i:hover {
   .LogginSmallDevices {
     margin-bottom: 1rem;
   }
+
+  .loginContainer {
+
+    width: 70%;
+  }
+
+  /* .loggin{
+    width: 65%;
+  } */
 
 
 
@@ -287,6 +338,12 @@ footer i:hover {
   .LogginSmallDevices {
     margin-bottom: 0;
   }
+  .loginContainer {
+
+    width: 50%;
+  }
+
+  
 
 
 }

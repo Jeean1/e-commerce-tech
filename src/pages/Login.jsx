@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Card, ListGroup } from 'react-bootstrap'
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -15,10 +15,12 @@ const Login = () => {
 
     const token = localStorage.getItem('token')
 
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
 
 
     const submit = data => {
+
+
 
         console.log(data)
 
@@ -27,10 +29,14 @@ const Login = () => {
                 navigate('/')
                 localStorage.setItem('token', res.data.data.token)
                 console.log(res.data)
-                setUser(res.data)
+                localStorage.setItem('user', JSON.stringify(res.data.data.user))
+                setUser(localStorage.getItem('user'))
+
+
+
             })
             .catch(error => {
-                if (error.response.status === 404) {
+                if (error.response?.status === 404) {
                     swal('wrong credentials', '', 'error')
                 }
             })
@@ -46,7 +52,10 @@ const Login = () => {
 
     }
 
+    // setUser(localStorage.getItem(user))
+
     console.log(user)
+
 
 
 
@@ -65,7 +74,7 @@ const Login = () => {
 
                         <>
 
-                            <div>
+                            {/* <div>
 
                                 <h1> ¡Welcome to the e-Commerce!</h1>
 
@@ -73,7 +82,27 @@ const Login = () => {
                                 <h3>You are online right now</h3>
 
 
+                            </div> */}
+
+
+                            <div className='loginContainer'>
+
+                                <h3>User info</h3>
+
+                                <div className='loginFontIcon'>
+
+                                    <i className="fa-solid fa-user-check" style={{ fontSize: '6rem' }}></i>
+
+                                </div>
+                                <div>
+                                    <h3>{user.firstName} {user.lastName}</h3>
+                                    <h3>{user.email}</h3>
+                                </div>
                             </div>
+
+
+
+
                         </>
 
 
